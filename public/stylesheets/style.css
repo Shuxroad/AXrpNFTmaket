@@ -1,0 +1,219 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.header-section{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  background: #006eff;  
+}
+.header-section h1{
+  margin: 0;  
+  padding-left: 10px;
+  color: #fff;
+}
+
+.item-section {
+  padding: 40px 10px;
+  display: block;
+  background: #aaddff;
+  margin-bottom: 40px;
+}
+.listlink{
+  margin: 10px 0 40px;
+  font-size: 20px;
+}
+
+.item-label{
+  margin-bottom: 20px;
+}
+label{
+  font-size: 18px;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: auto !important;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.swiper-pagination-bullets {
+  width: 100px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  margin: 0 0 0 10px !important;
+  background: #fff;
+}
+
+.swiper-pagination-bullet:first-child {
+  margin: 0 !important;
+}
+
+.genimg{
+  width: 100%;
+}
+.pricetag{
+  margin: 10px 0;
+}
+
+
+
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+.item {
+  border-radius: 10px;
+  background: #fff;
+  padding: 8px;
+  text-align: center;
+  max-width: 600px;
+}
+.grid img {
+  max-width: 100%;
+  height: auto;
+}
+.price{
+  margin-top: 10px;
+  font-size: 20px;
+}
+.price span{
+  font-weight: bold;
+}
+.btn{
+  color:#fff;
+  background-color:#0b96e7;
+  border: 0;
+  padding:10px 16px;
+  border-radius:10px;
+  cursor:pointer;
+  position:relative;
+  font-size:14px;
+  transition:0.3s ease all; 
+  margin-top: 10px;
+}
+.btn:hover{
+  color:#0b96e7;
+  background-color:#fff;
+  border: 1px solid #0b96e7;
+}
+
+
+.inputWithIcon input[type="text"] {
+  width: 100%;
+  max-width: 450px;;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 7px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  padding-left: 40px;
+
+}
+
+input[type="text"]:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+.inputWithIcon {
+  position: relative;
+}
+
+.inputWithIcon i {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  padding: 9px 8px;
+  color: #aaa;
+  transition: 0.3s;
+}
+
+.inputWithIcon input[type="text"]:focus + i {
+  color: dodgerBlue;
+}
+
+.inputWithIcon.inputIconBg i {
+  background-color: #aaa;
+  color: #fff;
+  padding: 9px 4px;
+  border-radius: 4px 0 0 4px;
+}
+
+.inputWithIcon.inputIconBg input[type="text"]:focus + i {
+  color: #fff;
+  background-color: dodgerBlue;
+}
+
+.loadmore{
+  margin-bottom: 40px;;
+}
+
+#loading{
+  display: none;
+}
+
+#loading.start{
+  display: block;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(359deg);
+  }
+}
+
+#loading p{
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+}
+.spinner-box {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.circle-border {
+  width: 50px;
+  height: 50px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgb(63,249,220);
+  background: linear-gradient(0deg, rgba(255,255,255,0.1) 33%, rgb(82, 63, 249) 100%);
+  animation: spin .8s linear 0s infinite;
+}
+.circle-core {
+  width: 100%;
+  height: 100%;
+  background-color: #aaddff;
+  border-radius: 50%;
+}

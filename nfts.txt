@@ -1,0 +1,35 @@
+Magical Glass
+    "NFTokenID": "000800052D34AB7A81FDAA11C2D17CFB002D06BF77320840F44995C8029FFE2E",
+        "NFTokenTaxon": 1,
+        "name": 'Magical Glass #1',
+        "image": 'QmdhVfQb9V8tkqNYhfvqhPGgJQ1szJqwurCq6FsgPaw3f8',
+    
+    "NFTokenID": "000800052D34AB7A81FDAA11C2D17CFB002D06BF773208400B2F66CB029FFE2F",
+        "NFTokenTaxon": 1,
+        "name": 'Magical Glass #2',
+        "image": 'QmQSfgymDmojeG1WgXHtG4zFzEVnCoYZrShwVbSXNxo4Aq',
+
+    "NFTokenID": "000800052D34AB7A81FDAA11C2D17CFB002D06BF77320840221537CA029FFE30",
+        "NFTokenTaxon": 1,
+        "name": 'Magical Glass #3',
+        "image": 'QmVJKAMvhbNaFgArwjkfnzbdwYMfS3gnBsiGEgHTqxy7Fa',
+
+    "NFTokenID": "000800052D34AB7A81FDAA11C2D17CFB002D06BF773208404FE0D9CC029FFE32",
+        "NFTokenTaxon": 1,
+        "name": 'Magical Glass #4',
+        "image": 'QmVkHfHMpZWp4qphxNqQY2nqCub3JKQPMwSrXG6f5T2pWR',
+
+    "NFTokenID": "000800052D34AB7A81FDAA11C2D17CFB002D06BF7732084038FB08CD029FFE31",
+        "NFTokenTaxon": 1,
+        "name": 'Magical Glass #5',
+        "image": 'QmbRZ3maNRKZ4NCTTMZ6oYQm8SNHoo8ZD8ssU75dm2nXF1',
+
+    "NFTokenID": "000800052D34AB7A81FDAA11C2D17CFB002D06BF7732084066C6AACF029FFE33",
+        "NFTokenTaxon": 1,
+        "name": 'Magical Glass #6',
+        "image": 'QmR1v16UxihDx6BEMYvc1o14cfzu3cnsvkQppot7ptEhwT',
+
+    "NFTokenID": "000800052D34AB7A81FDAA11C2D17CFB002D06BF773208407DAC7BCE029FFE34",
+        "NFTokenTaxon": 1,
+        "name": 'Magical Glass #7',
+        "image": 'QmQqhhd7WCE84xxtak5rorfYtp6SWf4UwuEJArAEHqu1bK',
