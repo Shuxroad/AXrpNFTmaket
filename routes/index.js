@@ -20,7 +20,6 @@ const PAPI_KEY = "9bc728b30d0365aa4ca3"
 const PSECRET_KEY = "bf3d57146662bb276f3ec0f81a0ea666d471be9a02a867a69239c0539acc9449"
 
 const gatewayUrl = "https://gateway.pinata.cloud/ipfs/";
-
 const pinataGatewayUrl = "https://orange-official-gecko-137.mypinata.cloud/ipfs/"
 
 const bithompUrl = "https://test.bithomp.com/ja/nft/";
@@ -28,6 +27,8 @@ const bithompAllUrl = "https://test.bithomp.com/ja/nft-explorer?issuer=rn3pWURH2
 
 
 const DEF_TAXON_NO = 2;
+const NFT_COLLECTION = [DEF_TAXON_NO, 3, 1];
+let currentNftNo = 0;
 
 let allTokens = null;
 
@@ -80,12 +81,14 @@ function getNet() {
 
 async function geClient() {
   let net = getNet();
-//  const client = new xrpl.Client(net, {
-//    connectionTimeout: 10000
-//  });
-    client = new xrpl.Client(net);
+  client = new xrpl.Client(net, {
+    connectionTimeout: 10000
+  });
+//  client = new xrpl.Client(net);
+  console.log("Connecting....");
   await client.connect();
 
+  console.log("Connected");
   return client;
 }
 
@@ -126,8 +129,6 @@ async function getBuyOffers(client, nftID) {
 
 
 async function getAccountTokens(client, addr) {
-
-
   tokens = await getTokens(client, addr);
 //  id = tokens.id;
 //  account = tokens.result.account;
@@ -230,20 +231,16 @@ var ids = new Map([
 function getContentUrl(uri) {
 
   let idbody = uri.split('://').pop();
-//  console.log("?? " + idbody);
-
   let contentUrl;
   if (ids.has(idbody)) {
-
-    console.log("!!!!!!!!!!!:" + idbody);
     contentUrl = pinataGatewayUrl + ids.get(idbody);
+//    console.log("uri:" + uri);
+//    console.log("idbody:" + idbody);
   }else{
     contentUrl = pinataGatewayUrl + idbody;
-//    contentUrl = gatewayUrl + idbody;
-//    contentUrl = null;
   }
+//    console.log("contentUrl:" + contentUrl);
 //  contentUrl = null;
-//  console.log("R: " + idbody);
 
   return contentUrl;
 }
@@ -260,11 +257,9 @@ async function getNFTInfo(client, input_nfts) {
     nftinfo = new NftInfo(tokenid, taxon, fee);
 
     uri = xrpl.convertHexToString(nft.URI);
-    let contentUrl = getContentUrl(uri);    
-    console.log(contentUrl);
+    let contentUrl = getContentUrl(uri);
 
     let json = undefined;
-
     if(contentUrl != null){
       //Error: Rate Limit
       const response = await fetch(contentUrl);
@@ -367,35 +362,40 @@ router.get('/', async function(req, res, next) {
 
 router.post('/', async function (req, res) {
 
-  console.log("post post");
-  console.log(req.body.addr);
+//  console.log("post post");
+//  console.log(req.body.addr);
 
   res.redirect('/');
 })
 
 router.post('/loadmore', async function (req, res) {
-  console.log("========= allTokens =========================");
-  console.table(allTokens);
+//  console.log("========= allTokens =========================");
+//  console.table(allTokens);
+  
+  currentNftNo = currentNftNo + 1;
 
-  let nfts_except = allTokens.filter( nft => nft.NFTokenTaxon != DEF_TAXON_NO );
+  if(currentNftNo >= NFT_COLLECTION.length){
+    let nfts = [];
+    res.send(nfts);
+    return;
+  }
+
+//  let nfts_except = allTokens.filter( nft => nft.NFTokenTaxon != DEF_TAXON_NO );
+
+  let nfttaxon = NFT_COLLECTION[currentNftNo]
+  let nfts_except = allTokens.filter( nft => nft.NFTokenTaxon == nfttaxon);
 
   console.log("========= nfts_except =========================");
   console.table(nfts_except);
 
-
-
   client = await geClient();
-
   let nfts = await getNFTInfo(client, nfts_except);
 
   client.disconnect();
-
-
   res.send(nfts);
-
 })
 
-router.post('/req-xumm', function (req, res) {
+router.post('/req-xumm', async function (req, res) {
 //  console.log(req.body)
 
 //  res.header("Access-Control-Allow-Origin", "*");

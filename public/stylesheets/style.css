@@ -47,6 +47,7 @@ label{
   width: 100%;
   height: 100%;
   text-align: center;
+  padding-bottom: 40px;
 }
 
 .swiper-pagination-bullets {
@@ -113,7 +114,9 @@ label{
   background-color:#fff;
   border: 1px solid #0b96e7;
 }
-
+.allnfts{
+  margin-top: 10px;
+}
 
 .inputWithIcon input[type="text"] {
   width: 100%;
@@ -164,7 +167,9 @@ input[type="text"]:focus {
 }
 
 .loadmore{
-  margin-bottom: 40px;;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 #loading{
@@ -216,4 +221,66 @@ input[type="text"]:focus {
   height: 100%;
   background-color: #aaddff;
   border-radius: 50%;
+}
+#popup {
+  display: none;
+}
+
+.popup-open {
+  cursor: pointer;
+}
+
+.popup-overlay {
+  display: none;
+}
+
+/*
+#popup:checked ~ .popup-overlay {
+  */
+#popup.active {
+  display: block;
+  z-index: 99999;
+  background-color: #00000070;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.popup-window {
+  width: 80%;
+  max-width: 560px;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  border: 1px solid #ccc;
+}
+
+.popup-text {
+  margin: 0;
+}
+
+.popup-text:not(:last-of-type) {
+  margin-bottom: 1em
+}
+
+.popup-close {
+  cursor: pointer;
+  position: absolute;
+  top: -26px;
+  right: 0;
+}
+
+a.btn{
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-decoration: none;
 }
