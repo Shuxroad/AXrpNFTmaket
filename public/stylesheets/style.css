@@ -71,6 +71,9 @@ label{
 .pricetag{
   margin: 10px 0;
 }
+.swiper .pricetag{
+ font-size: 20px;
+}
 
 
 
@@ -283,4 +286,80 @@ a.btn{
   margin-right: auto;
   display: block;
   text-decoration: none;
+}
+
+.card{
+  position: relative;
+  cursor: pointer;
+}
+
+.card .face{
+  width: 300px;
+  height: 200px;
+  transition: 0.5s;
+}
+
+.card .genimg{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.swiper .card .genimg{
+  transition: 0.5s;
+  transform: translateY(90px);
+}
+
+.card:hover .genimg{
+  transform: translateY(0);
+  opacity: 0.8;
+}
+
+.card .genimg .content{
+  transition: 0.5s;
+}
+
+.card .extrainfo{
+  transition: 0.5s;
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  box-sizing: border-box;
+  transform: translateY(-100px);
+}
+#loadItems .card .extrainfo{
+  height: 0px;
+  opacity: 0;
+}
+#loadItems .card:hover .extrainfo{
+  height: 160px;
+  opacity: 1;
+}
+
+.card:hover .extrainfo{
+  transform: translateY(0);
+}
+
+.card .extrainfo .content p{
+  margin: 0;
+  padding: 0;
+}
+
+.card .extrainfo .content .attrs{
+  margin: 15px 0 0;
+  display:  inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #333;
+  padding: 5px;
+  border: 1px solid #333;
+}
+
+.card .extrainfo .content .attrs:hover{
+  background: #333;
+  color: #fff;
 }

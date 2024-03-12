@@ -27,13 +27,12 @@ const bithompAllUrl = "https://test.bithomp.com/ja/nft-explorer?issuer=rn3pWURH2
 
 
 const DEF_TAXON_NO = 2;
-const NFT_COLLECTION = [DEF_TAXON_NO, 3, 1];
+const NFT_COLLECTION = [DEF_TAXON_NO, 3, 4, 1];
 let currentNftNo = 0;
 
 let allTokens = null;
 
 class NftInfo {
-
   nftid;
   nfttaxon;
   transferfee;
@@ -125,8 +124,6 @@ async function getBuyOffers(client, nftID) {
 
   return response;
 } //End of getBuyOffers()
-
-
 
 async function getAccountTokens(client, addr) {
   tokens = await getTokens(client, addr);
@@ -351,9 +348,10 @@ router.get('/', async function(req, res, next) {
     nfts = await getNFTInfo(client, nfts_g1);  
   }
 
+  await client.disconnect();
 
-  client.disconnect();
-  res.render('index', { nfts: nfts, isIssuer:isIssuer, nftsall:[] });
+  console.log("========= nfts_g1 =========================");
+  res.render('index', { nfts: nfts, isIssuer:isIssuer });
 
 //  let nfts = [];
 //  res.render('index', { nfts: nfts, isIssuer:true });
