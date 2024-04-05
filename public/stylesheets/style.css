@@ -75,13 +75,18 @@ label{
  font-size: 20px;
 }
 
-
-
 .grid {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
+@media (min-width: 568px){
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+
 .item {
   border-radius: 10px;
   background: #fff;
@@ -336,7 +341,7 @@ a.btn{
   opacity: 0;
 }
 #loadItems .card:hover .extrainfo{
-  height: 160px;
+  height: 100%;
   opacity: 1;
 }
 
@@ -350,7 +355,7 @@ a.btn{
 }
 
 .card .extrainfo .content .attrs{
-  margin: 15px 0 0;
+  margin-top: 10px;
   display:  inline-block;
   text-decoration: none;
   font-weight: 900;
